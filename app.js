@@ -24,4 +24,16 @@ connection.query('SELECT * FROM users', function(err, rows, fields){
         console.log('Erro ao realizar a consulta');
     }
 });
+
+connection.connect(function(err){
+    if(err) console.error('Erro ao realizar a conexão com DB:' + err.strack); return;
+});
  
+connection.query("INSERT INTO users (nome, email) VALUES ('Kelly','kelly@celerus.com')",
+ function(err,result){
+    if(!err){
+        console.log('Usuário cadastrado com sucesso');
+    } else {
+        console.log('Erro ao cadastrar usuário');
+    }
+});
