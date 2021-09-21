@@ -1,3 +1,19 @@
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize('node_new', 'mattnode', 'Attera_6969', {
+    host: 'localhost',
+    dialect: 'mysql',
+  
+});
+
+sequelize.authenticate().then(function(){
+    console.log('Conexao realizada com sucesso');
+}).catch(function(err){
+    console.log('Erro ao conectar com DB' + err);
+});
+
+/*
+
 //Conexao com BD MySQL
 const mysql = require('mysql');
 
@@ -37,3 +53,5 @@ connection.query("INSERT INTO users (nome, email) VALUES ('Kelly','kelly@celerus
         console.log('Erro ao cadastrar usuário');
     }
 });
+
+*/
